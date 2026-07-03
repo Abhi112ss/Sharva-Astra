@@ -1,5 +1,5 @@
 """
-Hermes Agent Uninstaller.
+Sharva-Astra Uninstaller.
 
 Provides options for:
 - Full uninstall: Remove everything including configs and data
@@ -521,7 +521,7 @@ def run_gui_uninstall(args):
         print(f"  Checked: {hermes_home}, and the standard app locations for this OS.")
         return
 
-    print(color("This removes the Chat GUI only. The Hermes agent stays installed.", Colors.CYAN))
+    print(color("This removes the Chat GUI only. The Sharva-Astra agent stays installed.", Colors.CYAN))
     print()
     print(color("Will remove:", Colors.YELLOW, Colors.BOLD))
     for p in summary["source_built_artifacts"]:
@@ -533,7 +533,7 @@ def run_gui_uninstall(args):
     print()
     if agent_is_installed(hermes_home):
         print(color("Kept intact:", Colors.GREEN, Colors.BOLD))
-        print(f"  • The Hermes agent at {hermes_home / 'hermes-agent'}")
+        print(f"  • The Sharva-Astra agent at {hermes_home / 'hermes-agent'}")
         print(f"  • Your config, sessions, and secrets under {hermes_home}")
         print()
 
@@ -559,7 +559,7 @@ def run_gui_uninstall(args):
     print(color("│            ✓ Chat GUI Uninstalled!                      │", Colors.GREEN, Colors.BOLD))
     print(color("└─────────────────────────────────────────────────────────┘", Colors.GREEN, Colors.BOLD))
     print()
-    print("The Hermes agent is still installed. Run 'hermes' to use the CLI,")
+    print("The Sharva-Astra agent is still installed. Run 'hermes' to use the CLI,")
     print("or 'hermes uninstall' to remove the agent too.")
     print()
 
@@ -601,7 +601,7 @@ def run_uninstall(args):
 
     print()
     print(color("┌─────────────────────────────────────────────────────────┐", Colors.MAGENTA, Colors.BOLD))
-    print(color("│            ⚕ Hermes Agent Uninstaller                  │", Colors.MAGENTA, Colors.BOLD))
+    print(color("│            ⚕ Sharva-Astra Uninstaller                  │", Colors.MAGENTA, Colors.BOLD))
     print(color("└─────────────────────────────────────────────────────────┘", Colors.MAGENTA, Colors.BOLD))
     print()
     
@@ -879,7 +879,7 @@ def _perform_uninstall(
         print(color("Reload your shell to complete the process:", Colors.YELLOW))
         print("  source ~/.bashrc  # or ~/.zshrc")
     print()
-    print("Thank you for using Hermes Agent! ⚕")
+    print("Thank you for using Sharva-Astra! ⚕")
     print()
 
 
