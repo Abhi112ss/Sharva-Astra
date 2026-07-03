@@ -8359,7 +8359,26 @@ def _resolve_update_branch(args) -> str:
     ``--branch`` (check path, git-update path, ZIP-fallback path) agrees on
     the same answer.
     """
-    return (getattr(args, "branch", None) or "main").strip() or "main"
+    branch = getattr(args, "branch", None)
+    if branch and branch.strip():
+        return branch.strip()
+
+    # Try to detect current checked out branch of PROJECT_ROOT
+    try:
+        import subprocess
+        result = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            cwd=PROJECT_ROOT,
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode == 0:
+            curr = result.stdout.strip()
+            if curr and curr != "HEAD":
+                return curr
+    except Exception:
+        pass
+    return "main"
 
 
 def _cmd_update_check(branch: str = "main", *, branch_explicit: bool = False):
