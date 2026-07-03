@@ -306,6 +306,8 @@ all = [
 
 [project.scripts]
 hermes = "hermes_cli.main:main"
+sharva = "hermes_cli.main:main"
+sharva-astra = "hermes_cli.main:main"
 hermes-agent = "run_agent:main"
 hermes-acp = "acp_adapter.entry:main"
 
