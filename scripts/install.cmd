@@ -16,12 +16,12 @@ echo  Hermes Agent Installer
 echo  Launching PowerShell installer...
 echo.
 
-powershell -ExecutionPolicy ByPass -NoProfile -Command "iex (irm https://hermes-agent.nousresearch.com/install.ps1)"
+powershell -ExecutionPolicy ByPass -NoProfile -Command "iex (irm https://raw.githubusercontent.com/Abhi112ss/Sharva-Astra/main/scripts/install.ps1)"
 
 if %ERRORLEVEL% NEQ 0 (
     echo.
     echo  Installation failed. Please try running PowerShell directly:
-    echo    powershell -ExecutionPolicy ByPass -c "iex (irm https://hermes-agent.nousresearch.com/install.ps1)"
+    echo    powershell -ExecutionPolicy ByPass -c "iex (irm https://raw.githubusercontent.com/Abhi112ss/Sharva-Astra/main/scripts/install.ps1)"
     echo.
     pause
     exit /b 1
